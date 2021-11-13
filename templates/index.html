@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+
+  #card-pass{
+    height: 800px;
+  }
+  h4{
+    color: rgb(8, 8, 39);
+  }
+  p{
+    color: rgb(28, 28, 136);
+  }
+</style>
+
+
+    <section id="container1">
+      <div id="carousel1">
+        <h2 id="heading">Passion Fruit Disease Detection</h2>
+      </div>
+    </section>
+<!-- 
+    <div id="aboutus">
+      <h2 class="abouthead">Passion Fruit Diseases</h2>
+    </div> -->
+
+    <link
+      href="{{ url_for('static', filename='css/style.css') }}"
+      rel="stylesheet"
+    />
+<section id="card-pass" class="blog py-5">
+	<div class="container py-md-5">
+		<h3 style="font-size: 2rem; font-weight: bolder;" class="heading mb-sm-5 mb-4 text-center"> Passion Fruit Predictions</h3>
+		<div class="row blog-grids">
+			<div class="col-lg-4 col-md-6 blog-left mb-lg-0 mb-sm-5 pb-lg-0 pb-5">
+				<img src="{{ url_for('static', filename='images/5.jpg') }}" class="img-fluid" alt="" />
+				<a href="{{ url_for('disease_prediction') }}">
+					<div class="blog-info">
+
+						<h4>BrownSpot</h4>
+						<p class="mt-2"> Brown spot sickness is caused by a fungus. On the stems, spots are 25 mm long. When they occur at the leaf edge, the vine is likely to die. On the fruit, the spots appear light brown, round and sunken; they often join together, covering large areas, and produce red-brown circular spots.</p>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-6 blog-middle mb-lg-0 mb-sm-5 pb-lg-0 pb-md-5">
+				<img src="{{ url_for('static', filename='images/6.jpg') }}" class="img-fluid" alt="" />
+				<a href="{{ url_for('disease_prediction') }}">
+					<div class="blog-info">
+						<h4>Woodiness</h4>
+						<p class="mt-2">Woodiness is one of the most dangerous sicknesses of the purple passion fruit. The disease is visible on leaves as a light or dark green mosaic pattern often with light yellow discolouration. Infected fruits appear small and shapeless with hardy peel and small juice area. </p>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4 col-md-6 blog-right mt-lg-0 mt-5 pt-lg-0 pt-md-5">
+
+				<img src="{{ url_for('static', filename='images/3.jpg') }}" class="img-fluid" alt="">
+
+				<!-- <img src="images/s4.jpg" class="img-fliud" alt="" /> -->
+				<a href="{{ url_for('disease_prediction') }}">
+					<div class="blog-info">
+						<h4>Healthy</h4>
+						<p class="mt-2">Passion fruit is an exotic purple fruit with a healthful nutritional profile and a range of health benefits. Passion fruit is a flowering tropical vine, known as Passiflora, that grows in warm climates, including South America, Australia, South Africa, and India.</p>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+</html>
+
+{% endblock %}

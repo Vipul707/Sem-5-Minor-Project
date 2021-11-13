@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Passion Fruit Disease Detection</title>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/favicon.ico') }}"
+    />
+    <link
+      href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link
+      href="{{ url_for('static', filename='css/styles.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style>
+    html body {
+      /* background-image: linear-gradient(rgb(235, 254, 255), rgb(76, 87, 172)); */
+      background: rgba(245, 245, 245, 1);
+      background: -webkit-radial-gradient(
+        top,
+        rgba(245, 245, 245, 1),
+        rgba(95, 106, 184, 0.8)
+      );
+      background: -moz-radial-gradient(
+        top,
+        rgba(245, 245, 245, 1),
+        rgba(95, 106, 184, 0.8)
+      );
+      background: radial-gradient(
+        to bottom,
+        rgba(245, 245, 245, 1),
+        rgba(95, 106, 184, 0.8)
+      );
+    }
+    .navbar-nav > li > .dropdown-menu {
+      font-size: 17px;
+      background-color: rgb(0, 0, 0);
+    }
+
+    .navbar-nav > li > .dropdown-menu > a {
+      color: white;
+      margin: 0rem;
+      text-align: center;
+    }
+    .navbar-nav > li > .dropdown-menu a:hover {
+      background-color: rgb(4, 43, 43);
+    }
+    #ftr {
+      background-color: rgb(4, 43, 43);
+
+      color: white;
+
+      height: 150px;
+    }
+
+    .center {
+      text-align: center;
+
+      font-size: 1.3rem;
+
+      color: #f1e9e4;
+    }
+
+    .m {
+      text-align: center;
+
+      justify-content: center;
+
+      font-size: 2rem;
+    }
+  </style>
+
+  <body>
+    <nav
+      style="padding: 10px"
+      class="navbar navbar-expand-lg fixed-top navbar-dark bg-choice"
+    >
+      <div
+        style="font-size: 1.5rem"
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('home') }}"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('disease_prediction') }}"
+              >Disease</a
+            >
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Contact Us
+            </a>
+            <div
+              list-items
+              class="dropdown-menu"
+              aria-labelledby="navbarDropdown"
+            >
+              <a class="dropdown-item" href="mailto:rahul.sd@somaiya.edu"
+                >Rahul</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="mailto:vipul.m@somaiya.edu"
+                >Vipul</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="mailto:smit10@somaiya.edu">Smit</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+    <footer id="ftr">
+      <br />
+
+      <div class="m">Passion Fruit Disease Detection</div>
+
+      <br />
+
+      <div class="center">Copyright &copy; Toofan all rights reserved.</div>
+
+      <script
+        src="{{ url_for('static', filename='js/main.js') }}"
+        type="text/javascript"
+      ></script>
+    </footer>
+  </body>
+
+  <script>
+    $(document).ready(function () {
+      $("li").click(function () {
+        $("li.nav-item.active").removeClass("active");
+        $(this).addClass("active");
+      });
+    });
+  </script>
+</html>

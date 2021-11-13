@@ -1,0 +1,77 @@
+{% extends "base.html" %} {% block content %}
+
+<style>
+  html body {
+    /* background-image: linear-gradient(rgb(235, 254, 255), rgb(76, 87, 172)); */
+    background: rgba(245, 245, 245, 1);
+    background: -webkit-radial-gradient(
+      top,
+      rgba(245, 245, 245, 1),
+      rgba(95, 106, 184, 0.8)
+    );
+    background: -moz-radial-gradient(
+      top,
+      rgba(245, 245, 245, 1),
+      rgba(95, 106, 184, 0.8)
+    );
+    background: radial-gradient(
+      to bottom,
+      rgba(245, 245, 245, 1),
+      rgba(95, 106, 184, 0.8)
+    );
+  }
+  #ftr {
+    position: relative;
+    bottom: -55;
+    width: 100%;
+    height: max-content;
+  }
+
+  #classifier {
+    height: 650px;
+  }
+</style>
+<br /><br />
+
+<div id="classifier">
+  <h2 style="text-align: center; margin: 3rem; color: black">
+    <b>Passion Fruit Disease Predictor</b>
+  </h2>
+
+  <center>
+    <h2>Select passion fruit image</h2>
+    <br />
+
+    <div>
+      <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label"> Choose... </label>
+        <input
+          type="file"
+          name="file"
+          id="imageUpload"
+          accept=".png, .jpg, .jpeg"
+        />
+      </form>
+
+      <div class="image-section" style="display: none">
+        <div class="img-preview">
+          <div id="imagePreview"></div>
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary btn-lg" id="btn-predict">
+            Predict!
+          </button>
+        </div>
+        <br />
+      </div>
+
+      <div class="loader" style="display: none"></div>
+
+      <h3 id="result">
+        <span> </span>
+      </h3>
+    </div>
+  </center>
+</div>
+
+{% endblock %}
